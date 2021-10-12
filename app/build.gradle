@@ -103,6 +103,8 @@ dependencies {
     // Viewpager2
     implementation "androidx.viewpager2:viewpager2:$viewpager2Version"
 
+    // Viewpager Dot indicator
+    implementation 'com.tbuonomo:dotsindicator:4.2'
 }
 
 kapt {

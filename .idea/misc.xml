@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Assignment/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Assignment/app/src/main/res/layout/fragment_details.xml" value="0.1546875" />
         <entry key="..\:/Assignment/app/src/main/res/layout/fragment_movies_booked.xml" value="0.13489583333333333" />
         <entry key="..\:/Assignment/app/src/main/res/layout/fragment_tasks.xml" value="0.1" />
         <entry key="..\:/Assignment/app/src/main/res/layout/item_booked_movies.xml" value="0.13489583333333333" />

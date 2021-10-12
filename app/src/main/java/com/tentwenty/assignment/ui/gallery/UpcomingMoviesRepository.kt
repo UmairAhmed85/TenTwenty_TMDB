@@ -7,6 +7,7 @@ import androidx.room.withTransaction
 import com.tentwenty.assignment.BuildConfig
 import com.tentwenty.assignment.api.TmdbApi
 import com.tentwenty.assignment.data.TenTwentyDatabase
+import com.tentwenty.assignment.data.upcomingmovies.UpcomingMovie
 import com.tentwenty.assignment.util.networkBoundResource
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -17,7 +18,6 @@ class UpcomingMoviesRepository @Inject constructor(
     private val db: TenTwentyDatabase
 ) {
     private val genresDao = db.genresDao()
-
     fun getUpcomingMoviesResults() =
         Pager(
             config = PagingConfig(

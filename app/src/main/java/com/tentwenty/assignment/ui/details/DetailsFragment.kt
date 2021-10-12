@@ -29,6 +29,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 when {
                     !it.isEmpty() -> {
                         viewPager.adapter = MovieImageViewPagerAdapter(it)
+                        dotsIndicator.setViewPager2(viewPager)
                         viewPager.offscreenPageLimit = 5
                         progressBar.isVisible = false
                     }

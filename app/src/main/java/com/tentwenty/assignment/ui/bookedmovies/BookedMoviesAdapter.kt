@@ -9,11 +9,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.tentwenty.assignment.BuildConfig
 import com.tentwenty.assignment.R
-import com.tentwenty.assignment.data.bookedmovies.BookedMovies
+import com.tentwenty.assignment.data.bookedmovies.BookedMovie
 import com.tentwenty.assignment.databinding.ItemBookedMoviesBinding
 
 class BookedMoviesAdapter() :
-    ListAdapter<BookedMovies, BookedMoviesAdapter.TasksViewHolder>(DiffCallback()) {
+    ListAdapter<BookedMovie, BookedMoviesAdapter.TasksViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TasksViewHolder {
         val binding =
@@ -29,7 +29,7 @@ class BookedMoviesAdapter() :
     inner class TasksViewHolder(private val binding: ItemBookedMoviesBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(task: BookedMovies) {
+        fun bind(task: BookedMovie) {
             binding.apply {
                 Glide.with(itemView)
                     .load(BuildConfig.URL_IMAGE_SIZE_THUMBNAIIL + task.movieImage)
@@ -41,16 +41,16 @@ class BookedMoviesAdapter() :
                 textViewLocation.text = "Location: " + task.location
                 textViewCinema.text = "Cinema: " + task.cinema
                 textViewSeatNumber.text = "Seat #: " + task.seat
+                textViewTicketNumber.text = task.id.toString()
             }
         }
     }
 
-
-    class DiffCallback : DiffUtil.ItemCallback<BookedMovies>() {
-        override fun areItemsTheSame(oldItem: BookedMovies, newItem: BookedMovies) =
+    class DiffCallback : DiffUtil.ItemCallback<BookedMovie>() {
+        override fun areItemsTheSame(oldItem: BookedMovie, newItem: BookedMovie) =
             oldItem.id == newItem.id
 
-        override fun areContentsTheSame(oldItem: BookedMovies, newItem: BookedMovies) =
+        override fun areContentsTheSame(oldItem: BookedMovie, newItem: BookedMovie) =
             oldItem == newItem
     }
 }

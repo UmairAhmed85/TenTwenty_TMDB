@@ -48,7 +48,7 @@ class BookMovieFragment : Fragment(R.layout.fragment_book_movie) {
                     return@setOnClickListener
                 }
 
-                viewModel.onSaveClick(location, cinema, seatNumber,bookUpComingMovie.poster_path)
+                viewModel.onSaveClick(location, cinema, seatNumber, bookUpComingMovie.id,bookUpComingMovie.poster_path)
                 showSnackbarMessage("Movie Booked Successfully")
 
                 findNavController().popBackStack()

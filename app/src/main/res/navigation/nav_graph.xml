@@ -18,7 +18,7 @@
             app:destination="@id/moviesBooked" />
         <action
             android:id="@+id/action_galleryFragment_to_bookedMoviesFragment"
-            app:destination="@id/tasksFragment" />
+            app:destination="@id/bookedMovieFragment" />
 
     </fragment>
     <fragment
@@ -39,10 +39,9 @@
             app:argType="com.tentwenty.assignment.data.upcomingmovies.UpcomingMovie" />
     </fragment>
     <fragment
-        android:id="@+id/tasksFragment"
+        android:id="@+id/bookedMovieFragment"
         android:name="com.tentwenty.assignment.ui.bookedmovies.BookedMoviesFragment"
         android:label="Booked Movies"
         tools:layout="@layout/fragment_booked_movies" />
-
 
 </navigation>

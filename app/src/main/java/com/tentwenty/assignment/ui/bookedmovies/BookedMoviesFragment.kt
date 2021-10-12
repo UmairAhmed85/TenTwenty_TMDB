@@ -7,13 +7,14 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tentwenty.assignment.R
 import com.tentwenty.assignment.databinding.FragmentBookedMoviesBinding
+import com.tentwenty.assignment.ui.gallery.UpcomingMoviesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class BookedMoviesFragment : Fragment(R.layout.fragment_booked_movies) {
 
     private val viewModel: BookedMoviesViewModel by viewModels()
-
+    private val upcomingViewModel: UpcomingMoviesViewModel by viewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

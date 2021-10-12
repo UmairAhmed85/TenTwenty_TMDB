@@ -6,11 +6,13 @@ import com.tentwenty.assignment.api.TmdbApi
 import com.tentwenty.assignment.data.upcomingmovies.UpcomingMovie
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Singleton
 
 private const val UNSPLASH_STARTING_PAGE_INDEX = 1
 
+@Singleton
 class UpcomingMoviesPagingSource(
-    private val tmdbApi: TmdbApi
+    private val tmdbApi: TmdbApi,
 ) : PagingSource<Int, UpcomingMovie>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UpcomingMovie> {
@@ -18,12 +20,12 @@ class UpcomingMoviesPagingSource(
 
         return try {
             val response = tmdbApi.fetchUpcomingMovies(BuildConfig.API_KEY, position, params.loadSize)
-            val photos = response.results
+            val upcomingMovieList = response.results
 
             LoadResult.Page(
-                data = photos,
+                data = upcomingMovieList,
                 prevKey = if (position == UNSPLASH_STARTING_PAGE_INDEX) null else position - 1,
-                nextKey = if (photos.isEmpty()) null else position + 1
+                nextKey = if (upcomingMovieList.isEmpty()) null else position + 1
             )
         } catch (exception: IOException) {
             LoadResult.Error(exception)

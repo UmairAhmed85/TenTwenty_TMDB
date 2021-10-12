@@ -9,10 +9,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface BookedMoviesDao {
     @Query("SELECT * FROM booked_movies")
-    fun getAllBookedMovies(): Flow<List<BookedMovies>>
+    fun getAllBookedMovies(): Flow<List<BookedMovie>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(bookedMovies: BookedMovies)
+    suspend fun insert(bookedMovie: BookedMovie)
 
     @Query("DELETE FROM booked_movies")
     suspend fun deleteAllBookedMovies()
