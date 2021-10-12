@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.details.DetailsFragment">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_pager">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/nexa_bold_c"
+                android:maxLines="2"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_headings"
+                tools:text="Movie Title" />
+
+            <TextView
+                android:id="@+id/text_view_watch_trailer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/gray"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/watch_trailer"
+                android:textColor="@color/black_dull"
+                android:textSize="@dimen/text_size_sub_heaings"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_genres_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/nexa_bold_c"
+                android:text="@string/genres"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_normal"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_genres_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black_dull"
+                android:textSize="@dimen/text_size_normal"
+                android:visibility="gone"
+                tools:text="Action, Thriller, Science Fiction"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_date_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/nexa_bold_c"
+                android:text="@string/date"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_normal"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_date_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black_dull"
+                android:textSize="@dimen/text_size_normal"
+                android:visibility="gone"
+                tools:text="27.04.2016"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_overview_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/nexa_bold_c"
+                android:text="@string/overview"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_normal"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_overview_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:maxLines="5"
+                android:textColor="@color/black_dull"
+                android:textSize="@dimen/text_size_normal"
+                android:visibility="gone"
+                tools:text="This is the overview section"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_rating_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/nexa_bold_c"
+                android:gravity="center"
+                android:text="@string/ratings"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_normal"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_rating_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black_dull"
+                android:textSize="@dimen/text_size_normal"
+                android:visibility="gone"
+                tools:text="Vote_Average"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

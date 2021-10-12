@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/galleryFragment">
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.tentwenty.assignment.ui.gallery.UpcomingMoviesFragment"
+        android:label="Gallery"
+        tools:layout="@layout/fragment_upcoming_movies">
+        <action
+            android:id="@+id/action_galleryFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_galleryFragment_to_movieBookingFragment"
+            app:destination="@id/moviesBooked" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.tentwenty.assignment.ui.details.DetailsFragment"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="upcoming_movie"
+            app:argType="com.tentwenty.assignment.data.upcomingmovies.UpcomingMovie" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesBooked"
+        android:name="com.tentwenty.assignment.ui.booked.MoviesBookedFragment"
+        android:label="Book Movies"
+        tools:layout="@layout/fragment_movies_booked">
+        <argument
+            android:name="upcoming_movie"
+            app:argType="com.tentwenty.assignment.data.upcomingmovies.UpcomingMovie" />
+    </fragment>
+
+
+</navigation>

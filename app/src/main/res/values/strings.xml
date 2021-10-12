@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Ten twenty app</string>
+    <string name="movie_item">Movie Item</string>
+    <string name="movie_title">Movie Name</string>
+    <string name="date_released">Date</string>
+    <string name="movie_type">Type</string>
+    <string name="movie_book">Book</string>
+    <string name="non_adult">Non adult</string>
+    <string name="location">Enter location</string>
+    <string name="cinema">Enter cinema</string>
+    <string name="seat_number">Enter seat number</string>
+    <string name="submit">SUBMIT</string>
+    <string name="watch_trailer">Watch Trailer</string>
+    <string name="genres">Genres</string>
+    <string name="date">Date</string>
+    <string name="overview">Overview</string>
+    <string name="ratings">Ratings</string>
+    <string name="results_could_not_be_loaded">Results could not be loaded</string>
+    <string name="retry">Retry</string>
+    <string name="no_results_found_for_this_query">No results found for this query</string>
+</resources>

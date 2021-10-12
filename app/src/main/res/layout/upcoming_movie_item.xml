@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/image_view_logo"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/movie_item"
+        android:scaleType="centerCrop"
+        tools:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/image_view_logo"
+        android:layout_alignBottom="@+id/image_view_logo"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@+id/text_view_book"
+        android:layout_toEndOf="@id/image_view_logo"
+        android:gravity="center|start"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_medium"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal"
+            tools:text="@string/movie_title" />
+
+        <TextView
+            android:id="@+id/text_view_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/text_size_small"
+            tools:text="@string/date_released" />
+
+        <TextView
+            android:id="@+id/text_view_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/text_size_small"
+            tools:text="@string/movie_type" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_view_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/border_tv"
+        android:clickable="true"
+        android:elevation="5dp"
+        android:focusable="true"
+        android:fontFamily="@font/nexa_bold_c"
+        android:maxLines="1"
+        android:padding="20dp"
+        android:text="@string/movie_book"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_700"
+        android:textSize="@dimen/text_size_action_button" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/image_view_logo"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toEndOf="@+id/image_view_logo"
+        android:background="@color/gray" />
+</RelativeLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    tools:context=".ui.booked.MoviesBookedFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+
+        android:clipToPadding="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/purple_700"
+            android:fontFamily="@font/nexa_bold_c"
+            android:gravity="center"
+            android:text="BOOK YOUR MOVIE TICKET"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_headings" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/location_wrapper"
+            style="@style/LoginTextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_border_fill_white"
+            android:clipToPadding="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_location"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center|start"
+                android:hint="@string/location"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/black_dull"
+                android:textColorHint="@color/gray_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cinema_wrapper"
+            style="@style/LoginTextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_border_fill_white"
+            android:clipToPadding="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_cinema"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center|start"
+                android:hint="@string/cinema"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/black_dull"
+                android:textColorHint="@color/gray_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/seat_number_wrapper"
+            style="@style/LoginTextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_border_fill_white"
+            android:clipToPadding="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_seat_number"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center|start"
+                android:hint="@string/seat_number"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/black_dull"
+                android:textColorHint="@color/gray_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/button_sumit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/nexa_bold_c"
+            android:text="@string/submit"
+            android:textColor="@color/purple_700"
+            android:textSize="@dimen/text_size_sub_heaings" />
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
