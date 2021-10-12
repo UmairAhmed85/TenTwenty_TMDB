@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 data class BookedMovies(
     val location: String,
     val cinema: String,
-    @PrimaryKey
-    val seat: Int
+    val seat: Int,
+    val movieImage: String, // Just using it for better demo understanding when user is at Booked Movie Screen
+    @PrimaryKey(autoGenerate = true)  val id: Int = 0
 )

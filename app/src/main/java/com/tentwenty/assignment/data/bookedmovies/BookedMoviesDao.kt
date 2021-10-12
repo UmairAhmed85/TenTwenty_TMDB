@@ -12,7 +12,7 @@ interface BookedMoviesDao {
     fun getAllBookedMovies(): Flow<List<BookedMovies>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMovieAsBooked(genres: List<BookedMovies>)
+    suspend fun insert(bookedMovies: BookedMovies)
 
     @Query("DELETE FROM booked_movies")
     suspend fun deleteAllBookedMovies()

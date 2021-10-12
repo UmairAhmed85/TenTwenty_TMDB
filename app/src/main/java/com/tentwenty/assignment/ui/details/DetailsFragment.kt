@@ -28,7 +28,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             viewModel.imageList.observe(viewLifecycleOwner) {
                 when {
                     !it.isEmpty() -> {
-                        viewPager.adapter = MovieImageAdapter(it)
+                        viewPager.adapter = MovieImageViewPagerAdapter(it)
                         viewPager.offscreenPageLimit = 5
                         progressBar.isVisible = false
                     }

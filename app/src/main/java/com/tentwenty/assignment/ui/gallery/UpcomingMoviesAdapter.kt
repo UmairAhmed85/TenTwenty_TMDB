@@ -45,6 +45,15 @@ class UpcomingMoviesAdapter(private val listener: OnItemClickListener) :
                     }
                 }
             }
+            binding.textViewBook.setOnClickListener{
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val item = getItem(position)
+                    if (item != null) {
+                        listener.onItemBooked(item)
+                    }
+                }
+            }
         }
 
         fun bind(upcomingMovie: UpcomingMovie) {

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_galleryFragment_to_movieBookingFragment"
             app:destination="@id/moviesBooked" />
+        <action
+            android:id="@+id/action_galleryFragment_to_bookedMoviesFragment"
+            app:destination="@id/tasksFragment" />
 
     </fragment>
     <fragment
@@ -28,13 +31,18 @@
     </fragment>
     <fragment
         android:id="@+id/moviesBooked"
-        android:name="com.tentwenty.assignment.ui.booked.MoviesBookedFragment"
+        android:name="com.tentwenty.assignment.ui.bookmovie.BookMovieFragment"
         android:label="Book Movies"
-        tools:layout="@layout/fragment_movies_booked">
+        tools:layout="@layout/fragment_book_movie">
         <argument
             android:name="upcoming_movie"
             app:argType="com.tentwenty.assignment.data.upcomingmovies.UpcomingMovie" />
     </fragment>
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.tentwenty.assignment.ui.bookedmovies.BookedMoviesFragment"
+        android:label="Booked Movies"
+        tools:layout="@layout/fragment_booked_movies" />
 
 
 </navigation>

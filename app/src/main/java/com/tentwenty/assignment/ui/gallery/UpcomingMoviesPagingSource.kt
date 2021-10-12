@@ -1,8 +1,9 @@
-package com.tentwenty.assignment.data.upcomingmovies
+package com.tentwenty.assignment.ui.gallery
 
 import androidx.paging.PagingSource
 import com.tentwenty.assignment.BuildConfig
 import com.tentwenty.assignment.api.TmdbApi
+import com.tentwenty.assignment.data.upcomingmovies.UpcomingMovie
 import retrofit2.HttpException
 import java.io.IOException
 

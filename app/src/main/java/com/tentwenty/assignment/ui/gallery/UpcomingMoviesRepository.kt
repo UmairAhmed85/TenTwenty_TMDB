@@ -1,4 +1,4 @@
-package com.tentwenty.assignment.data.upcomingmovies
+package com.tentwenty.assignment.ui.gallery
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig

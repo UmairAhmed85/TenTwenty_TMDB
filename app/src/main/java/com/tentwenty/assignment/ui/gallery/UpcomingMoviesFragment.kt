@@ -1,26 +1,33 @@
 package com.tentwenty.assignment.ui.gallery
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
+import com.google.android.material.snackbar.Snackbar
 import com.tentwenty.assignment.R
 import com.tentwenty.assignment.data.genres.Genres
 import com.tentwenty.assignment.data.upcomingmovies.UpcomingMovie
 import com.tentwenty.assignment.databinding.FragmentUpcomingMoviesBinding
+import com.tentwenty.assignment.ui.bookedmovies.BookedMoviesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class UpcomingMoviesFragment : Fragment(R.layout.fragment_upcoming_movies),
     UpcomingMoviesAdapter.OnItemClickListener {
-companion object{
-     var genresList: List<Genres> = listOf()
-}
-    private val viewModel by viewModels<UpcomingMoviesViewModel>()
+    companion object {
+        var genresList: List<Genres> = listOf()
+    }
 
+    private val viewModel: UpcomingMoviesViewModel by viewModels()
+    private val bookedViewModel: BookedMoviesViewModel by viewModels()
     private var _binding: FragmentUpcomingMoviesBinding? = null
     private val binding get() = _binding!!
 
@@ -67,16 +74,44 @@ companion object{
                 }
             }
         }
+
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            bookedViewModel.bookedMovies.observe(viewLifecycleOwner) {
+                if (it.isNotEmpty())
+                    setHasOptionsMenu(true)
+            }
+        }
     }
 
     override fun onItemClick(upcomingMovie: UpcomingMovie) {
-        val action = UpcomingMoviesFragmentDirections.actionGalleryFragmentToDetailsFragment(upcomingMovie)
+        val action =
+            UpcomingMoviesFragmentDirections.actionGalleryFragmentToDetailsFragment(upcomingMovie)
         findNavController().navigate(action)
     }
 
     override fun onItemBooked(upcomingMovie: UpcomingMovie) {
-        val action = UpcomingMoviesFragmentDirections.actionGalleryFragmentToMovieBookingFragment(upcomingMovie)
+        val action = UpcomingMoviesFragmentDirections.actionGalleryFragmentToMovieBookingFragment(
+            upcomingMovie
+        )
         findNavController().navigate(action)
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_booking, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()) {
+            R.id.action_booking -> {
+                val action =
+                    UpcomingMoviesFragmentDirections.actionGalleryFragmentToBookedMoviesFragment()
+                findNavController().navigate(action)
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 
 

@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
-import com.tentwenty.assignment.data.upcomingmovies.UpcomingMoviesRepository
 
 class UpcomingMoviesViewModel @ViewModelInject constructor(
     private val repository: UpcomingMoviesRepository

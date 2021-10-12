@@ -11,8 +11,8 @@ import com.tentwenty.assignment.R
 import com.tentwenty.assignment.data.movieimages.MovieImages
 import com.tentwenty.assignment.databinding.ItemViewpagerBinding
 
-class MovieImageAdapter(imagesList: List<MovieImages>) :
-    RecyclerView.Adapter<MovieImageAdapter.MovieImageViewHolder>() {
+class MovieImageViewPagerAdapter(imagesList: List<MovieImages>) :
+    RecyclerView.Adapter<MovieImageViewPagerAdapter.MovieImageViewHolder>() {
     private val imagesList = imagesList
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieImageViewHolder {
         val binding =

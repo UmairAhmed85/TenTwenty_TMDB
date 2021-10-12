@@ -26,7 +26,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideUnsplashApi(retrofit: Retrofit): TmdbApi =
+    fun provideTmdbApi(retrofit: Retrofit): TmdbApi =
         retrofit.create(TmdbApi::class.java)
 
     @Provides
@@ -34,4 +34,6 @@ object AppModule {
     fun provideDatabase(app: Application) : TenTwentyDatabase =
         Room.databaseBuilder(app, TenTwentyDatabase::class.java, "tentwenty_database")
             .build()
+    @Provides
+    fun provideTaskDao(db: TenTwentyDatabase) = db.bookedMoviesDao()
 }
